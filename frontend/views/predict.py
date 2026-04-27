@@ -2,7 +2,6 @@ import textwrap
 
 import requests
 import streamlit as st
-from PIL import Image
 
 from data import latin_for
 
@@ -78,7 +77,7 @@ def render() -> None:
             label_visibility="collapsed",
         )
         if uploaded is not None:
-            st.image(Image.open(uploaded), use_container_width=True)
+            st.image(uploaded, use_container_width=True)
 
     result = None
     with col_result:
