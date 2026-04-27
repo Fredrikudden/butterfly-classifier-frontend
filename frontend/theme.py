@@ -106,11 +106,17 @@ html, body, [data-testid="stAppViewContainer"] {
 
 [data-testid="stFileUploader"] section,
 [data-testid="stFileUploaderDropzone"] {
-  background: rgba(255, 250, 240, 0.55) !important;
-  border: 1px solid var(--hairline) !important;
+  background: rgba(255, 250, 240, 0.6) !important;
+  border: 1px dashed var(--hairline) !important;
   border-radius: 0 !important;
-  padding: 1.5rem 1.4rem !important;
+  padding: 2.2rem 1.6rem !important;
   position: relative;
+  transition: background-color .25s ease, border-color .25s ease;
+}
+[data-testid="stFileUploader"] section:hover,
+[data-testid="stFileUploaderDropzone"]:hover {
+  background: rgba(255, 250, 240, 0.85) !important;
+  border-color: var(--rose) !important;
 }
 [data-testid="stFileUploader"] section::before,
 [data-testid="stFileUploader"] section::after {
@@ -123,15 +129,76 @@ html, body, [data-testid="stAppViewContainer"] {
 [data-testid="stFileUploader"] section::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
 [data-testid="stFileUploader"] section::after  { bottom: -1px; right: -1px; border-left: none; border-top: none; }
 
-[data-testid="stFileUploader"] small {
+[data-testid="stFileUploaderDropzoneInstructions"] {
+  font-family: var(--font) !important;
+  color: var(--ink) !important;
+}
+[data-testid="stFileUploaderDropzoneInstructions"] span {
+  font-family: var(--font) !important;
+  font-weight: 500 !important;
+  font-size: 0.95rem !important;
+  color: var(--ink) !important;
+  letter-spacing: 0 !important;
+}
+[data-testid="stFileUploaderDropzoneInstructions"] small {
   font-family: var(--font) !important;
   color: var(--ink-muted) !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.04em !important;
+  margin-top: 0.3rem !important;
 }
+[data-testid="stFileUploader"] svg {
+  color: var(--rose) !important;
+  fill: var(--rose) !important;
+  opacity: 0.85;
+}
+
+/* Browse files button — proper editorial pill */
 [data-testid="stFileUploader"] button {
   font-family: var(--font) !important;
   font-weight: 500 !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--ink) !important;
+  background: transparent !important;
+  border: 1px solid var(--ink) !important;
+  border-radius: 0 !important;
+  padding: 0.55rem 1.2rem !important;
+  margin-left: 1rem !important;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+  cursor: pointer;
+}
+[data-testid="stFileUploader"] button:hover {
+  color: #FFF8EC !important;
+  background: var(--ink) !important;
+  border-color: var(--ink) !important;
+}
+[data-testid="stFileUploader"] button:focus,
+[data-testid="stFileUploader"] button:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px var(--hairline-soft) !important;
+}
+
+/* Uploaded-file row (after a file is selected) */
+[data-testid="stFileUploaderFile"] {
+  background: rgba(255, 250, 240, 0.6) !important;
+  border: 1px solid var(--hairline) !important;
+  padding: 0.6rem 0.8rem !important;
+  margin-top: 0.6rem !important;
+}
+[data-testid="stFileUploaderFileName"] {
+  font-family: var(--font) !important;
+  color: var(--ink) !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+}
+[data-testid="stFileUploaderFile"] small {
+  font-family: var(--font) !important;
+  color: var(--ink-muted) !important;
+}
+[data-testid="stFileUploaderDeleteBtn"] {
+  color: var(--rose) !important;
 }
 
 /* ── Image rendering ─────────────────────────────────────────────── */
