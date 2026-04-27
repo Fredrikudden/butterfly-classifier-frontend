@@ -65,13 +65,26 @@ html, body, [data-testid="stAppViewContainer"] {
   font-size: 0.92rem;
   letter-spacing: 0.005em;
   color: var(--ink-muted) !important;
-  padding: 0.75rem 1.4rem !important;
+  padding: 0 !important;
   border-bottom: 1.5px solid transparent !important;
   margin-bottom: -1px;
-  transition: color .25s ease, border-color .25s ease;
+  transition: color .25s ease, border-color .25s ease, background-color .25s ease;
   background: transparent !important;
+  cursor: pointer;
 }
-[data-testid="stTabs"] [role="tab"]:hover { color: var(--ink) !important; }
+[data-testid="stTabs"] [role="tab"] > * {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.8rem !important;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+[data-testid="stTabs"] [role="tab"]:hover {
+  color: var(--ink) !important;
+  background: rgba(168, 52, 74, 0.04) !important;
+}
 [data-testid="stTabs"] [role="tab"][aria-selected="true"] {
   color: var(--ink) !important;
   border-bottom-color: var(--rose) !important;
